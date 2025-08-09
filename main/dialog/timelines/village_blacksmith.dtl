@@ -1,3 +1,13 @@
-vilage_blacksmith: The blacksmith is defunct. Its wooden shingle roof has caved in, either from rot or fire - it's not clear which afflicted the stucture first. Bland, grey stone walls still stand, though even they have been weathered by erosion.
-vilage_blacksmith: Past the empty doorframe, a lone anvil sits amidst piles and piles of ash.
+The blacksmith is defunct. Its wooden shingle roof has caved in, either from rot or fire - it's not clear which afflicted the stucture first. Bland, grey stone walls still stand, though even they have been weathered by erosion.
+Past the empty doorframe, a lone anvil sits amidst piles of ash and discarded, half-finished pieces of weapons and armor. The furnace is cold and dormant. Part of the collapsed ceiling has crushed the bellows.
+if {DaggerGet} == false:
+	Despite the desolation and decay that has wrecked this place, you are still able to discern a small gleam buried under the ashes.
+	- Investigate the gleam.
+		You brush aside the surrounding soot and find a simple dagger lying on the cobbled stone floor. Its empty sheath lies not far away from it, in the same pile of dust.
+		- Take it.
+			You place the dagger in the sheath and fasten it to your belt. It is strange that a functional weapon like this has been left behind. Hopefully, its owner had no need of it. Why would you carry such an item - something capable of violence?
+			[signal arg="knife"]
+			set {DaggerGet} = true
+		- Leave it.
+	- Ignore it.
 [signal arg="player_unpause"]

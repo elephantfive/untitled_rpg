@@ -1,14 +1,9 @@
 extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var itemlist = ["knife"]
+@onready var grid_container = $GridContainer
 
 func additem(item):
-	pass
+	var new_item = Button.new()
+	new_item.name = item
+	new_item.text = item
+	grid_container.add_child(new_item)

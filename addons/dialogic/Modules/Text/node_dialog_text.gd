@@ -56,6 +56,7 @@ func _ready() -> void:
 # this is called by the DialogicGameHandler to set text
 
 func reveal_text(_text: String, keep_previous:=false) -> void:
+	scroll_to_line(0)
 	if !enabled:
 		return
 	show()

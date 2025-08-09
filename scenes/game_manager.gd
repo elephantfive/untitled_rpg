@@ -14,8 +14,8 @@ func _on_dialogic_signal(argument:String):
 	elif argument == "player_unpause":
 		unpause(player)
 		#player_black_box.visible = false
-	elif argument == "add_knife":
-		inventory.additem("knife")
+	elif argument in inventory.itemlist:
+		inventory.additem(argument)
 	
 func pause(scene):
 	scene.set_deferred("process_mode", PROCESS_MODE_DISABLED)
