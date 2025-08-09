@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "rattyhumpus",
+&"description": "",
+&"display_name": "Rattyhumpus Bumfuzzle",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"rattyhumpus": {
+"export_overrides": {
+"image": "\"res://assets/images/rattyhampusbumfuzzlecolored.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 50),
+"scale": 1.25,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

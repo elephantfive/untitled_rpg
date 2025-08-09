@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcr364vimdu6h"]
+
+[ext_resource type="Script" uid="uid://bf1d5byjppaif" path="res://scripts/dialogue_screen.gd" id="1_o66xv"]
+[ext_resource type="Script" uid="uid://baixgdj28lqqw" path="res://scripts/dialogue_option_button.gd" id="3_sufax"]
+
+[node name="DialogueScreen" type="Node2D"]
+z_index = 1
+script = ExtResource("1_o66xv")
+
+[node name="Background" type="Polygon2D" parent="."]
+position = Vector2(0, 390)
+scale = Vector2(1, 0.4)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648, 0, 0)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_left = 6.00001
+offset_top = 396.0
+offset_right = 46.0
+offset_bottom = 436.0
+scale = Vector2(6.25, 6.25)
+border_color = Color(1, 1, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="NPCSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(125, 520)
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 420.0
+offset_right = 1115.0
+offset_bottom = 623.0
+autowrap_mode = 3
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+offset_left = 335.0
+offset_top = 475.0
+offset_right = 375.0
+offset_bottom = 515.0
+
+[node name="Button0" type="Button" parent="Buttons"]
+visible = false
+layout_mode = 2
+text = "placeholder"
+alignment = 0
+script = ExtResource("3_sufax")
+
+[node name="Button1" type="Button" parent="Buttons"]
+visible = false
+layout_mode = 2
+alignment = 0
+script = ExtResource("3_sufax")
+
+[node name="Button2" type="Button" parent="Buttons"]
+visible = false
+layout_mode = 2
+alignment = 0
+script = ExtResource("3_sufax")
+
+[node name="Button3" type="Button" parent="Buttons"]
+visible = false
+layout_mode = 2
+alignment = 0
+script = ExtResource("3_sufax")
+
+[connection signal="pressed" from="Buttons/Button0" to="Buttons/Button0" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Button1" to="Buttons/Button1" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Button2" to="Buttons/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Button3" to="Buttons/Button3" method="_on_pressed"]

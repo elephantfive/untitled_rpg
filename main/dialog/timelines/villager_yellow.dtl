@@ -1,0 +1,2 @@
+villager_yellow: Hello.
+[signal arg="player_unpause"]

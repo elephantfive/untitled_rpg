@@ -1,0 +1,13 @@
+if {BlueTalked} == false:
+	set {BlueTalked} = true
+	villager_blue: Been a while since we've seen you around.
+	villager_blue: Or maybe we've never seen you. I can't really remember.
+	villager_blue: Either way, welcome.
+	jump questions
+villager_blue: Greetings. What can I do for you?
+label questions
+- What's going on? What's with all these carts?
+	villager_blue: I'm not exactly sure. You might want to ask around - someone else may know.
+- What do you know about me?
+	villager_blue: It's hard to say. I'm not the best person to ask.
+[signal arg="player_unpause"]
