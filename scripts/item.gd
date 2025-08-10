@@ -1,17 +1,18 @@
 extends Button
 
 var texture: String
+var title: String
 var desc: String
 var type: String
 var hud: CanvasLayer
 
 func _ready():
-	text = name
+	text = title
 
 
 func _on_pressed():
-	if hud.item_desc.visible == false:
-		hud.item_desc.item_name.text = name
+	if hud.item_desc.visible == false or hud.item_desc.item_name.text != title:
+		hud.item_desc.item_name.text = title
 		hud.item_desc.item_texture.texture = load(texture)
 		hud.item_desc.item_type.text = type
 		hud.item_desc.item_desc.text = desc

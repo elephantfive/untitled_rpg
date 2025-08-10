@@ -8,7 +8,12 @@ var dialogue_allowed: bool = true
 func _ready():
 	sprite_highlight.texture = sprite_2d.texture
 	sprite_highlight.scale = sprite_2d.scale * 1.1
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
+func _on_dialogic_signal(argument:String):
+	if argument == ('kill' + '.' + name):
+		queue_free()
+	
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

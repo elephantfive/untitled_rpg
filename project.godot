@@ -41,8 +41,10 @@ layout/default_style="res://main/dialog/speakerstyle.tres"
 glossary/default_case_sensitive=true
 variables={
 "items": {
+"blue_entrails": false,
 "juggleballs": false,
-"knife": false
+"knife": false,
+"yellow_entrails": false
 },
 "village": {
 "talked": {

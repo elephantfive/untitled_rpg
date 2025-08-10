@@ -1,4 +1,10 @@
 villager_yellow: Hello.
+- Stab this thing. | [if {items.knife} == true]
+	[sound path="res://assets/sounds/squareclick.wav" volume="0.0"]
+	villager_yellow: Oh! I hadn't expected that.
+	set {items.yellow_entrails} = true
+	[signal arg="yellow_entrails"]
+	[signal arg="kill.villager_yellow"]
 - Do you know who I am?
 	villager_yellow: Maybe.
 - Who are you?

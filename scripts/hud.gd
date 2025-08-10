@@ -1,11 +1,17 @@
 extends CanvasLayer
 var itemlist = {
 	"knife": {
+		'title': 'Rusty Dagger',
 		'type': 'Weapon', 
 		'desc': 'Useful for cutting things and procuring entrails.',
 		'texture': 'res://assets/images/knife.png'
 		},
-	
+	"yellow_entrails": {
+		'title': 'Villager Entrails',
+		'type': 'Biological Material',
+		'desc': 'Entrails taken from a villager',
+		'texture': 'res://assets/images/yellow_entrails.png'
+	},
 }
 
 var inv_open = false
@@ -16,8 +22,7 @@ const ITEM = preload("res://main/items/item.tscn")
 
 func additem(item):
 	var new_item = ITEM.instantiate()
-	new_item.name = item
-	new_item.text = item
+	new_item.title = itemlist[item]['title']
 	new_item.type = itemlist[item]['type']
 	new_item.desc = itemlist[item]['desc']
 	new_item.texture = itemlist[item]['texture']
