@@ -10,4 +10,3 @@ if {DaggerGet} == false:
 			set {DaggerGet} = true
 		- Leave it.
 	- Ignore it.
-[signal arg="player_unpause"]

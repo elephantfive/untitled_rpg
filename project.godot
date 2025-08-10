@@ -66,6 +66,7 @@ text/autopauses={}
 history/simple_history_enabled=true
 animations/join_default="Instant In"
 animations/leave_default="Instant Out"
+text/autocolor_names=true
 
 [display]
 

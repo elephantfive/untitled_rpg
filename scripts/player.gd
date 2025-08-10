@@ -8,7 +8,7 @@ var move_direction = Vector2(0, 0)
 
 	
 func _physics_process(_delta):
-	if hud.inv_open == false:
+	if hud.inv_open == false and Dialogic.current_timeline == null:
 		move_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		velocity = move_direction * speed
 		move_and_slide()

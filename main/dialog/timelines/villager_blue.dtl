@@ -6,8 +6,8 @@ if {BlueTalked} == false:
 	jump questions
 villager_blue: Greetings. What can I do for you?
 label questions
-- What's going on? What's with all these carts?
-	villager_blue: I'm not exactly sure. You might want to ask around - someone else may know.
+- Stab this thing and take its entrails. | [if {DaggerGet} == true]
 - What do you know about me?
 	villager_blue: It's hard to say. I'm not the best person to ask.
-[signal arg="player_unpause"]
+- What's going on? What's with all these carts?
+	villager_blue: I'm not exactly sure. You might want to ask around - someone else may know.

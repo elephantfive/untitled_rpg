@@ -15,7 +15,6 @@ func _on_input_event(_viewport, event, _shape_idx):
 			if Dialogic.current_timeline != null:
 				return
 			else:
-				game_manager.pause(player)
 				Dialogic.start(str(name))
 
 func _on_mouse_entered():

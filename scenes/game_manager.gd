@@ -8,13 +8,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _on_dialogic_signal(argument:String):
-	if argument == "player_pause":
-		pause(player)
-		#player_black_box.visible = true
-	elif argument == "player_unpause":
-		unpause(player)
-		#player_black_box.visible = false
-	elif argument in hud.itemlist:
+	if argument in hud.itemlist:
 		hud.additem(argument)
 	
 func pause(scene):
