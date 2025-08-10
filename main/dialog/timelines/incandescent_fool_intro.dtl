@@ -7,6 +7,10 @@ if {village.talked.BlueTalked} == false:
 incandescent_fool: Hidey-ho. Is it time to juggle, or what?
 label questions
 - Stab this thing and take its entrails. | [if {items.knife} == true]
+	incandescent_fool: Murder? On the stage?
+	set {items.fool_entrails} = true
+	[signal arg="fool_entrails"]
+	[signal arg="kill.incandescent_fool"]
 - I've naught to juggle with. | [if {items.juggleballs} == false]
 	incandescent_fool: A crying shame.
 - It's time to juggle. | [if {items.juggleballs} == true]

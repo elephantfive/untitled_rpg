@@ -10,4 +10,9 @@ if {village.talked.RattyIntroTalked} == false:
 	rattyhumpus: That's real nice. You know, I'd have chosen the same thing, given the choice.
 	rattyhumpus: I didn't have a choice, though. I'm Rattyhumpus Bumfuzzle. Ratty for short, if it pleases you.
 	rattyhumpus: I'm the local haruspex. I can read entrails. In fact, I came to this place looking for some, but I can't find them. Why don't you make yourself useful and look around for them?
-rattyhumpus: Go on then, get! Find me some entrails!
+if {items.fool_entrails} == false and {items.hilgrum_entrails} == false:
+	rattyhumpus: Go on then, get! Find me some entrails!
+- Present the Incandescent Fool's entrails. | [if {items.fool_entrails} == true]
+	rattyhumpus: All striped and silly - those are the entrails of a fool, no doubt. Bring them closer, and I'll get to mushing.
+- Present Hilgrum's entrails. | [if {items.hilgrum_entrails} == true]
+	rattyhumpus: Sharp, fasionable, witty - you have Hilgrum's entrails, don't you? Come on, give 'em here. Let's see what we've got.

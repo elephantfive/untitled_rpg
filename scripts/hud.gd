@@ -6,8 +6,8 @@ var itemlist = {
 		'desc': 'Useful for cutting things and procuring entrails.',
 		'texture': 'res://assets/images/knife.png'
 		},
-	"yellow_entrails": {
-		'title': 'Villager Entrails',
+	"hilgrum_entrails": {
+		'title': 'Hilgrum\'s Entrails',
 		'type': 'Biological Material',
 		'desc': 'Entrails taken from a villager',
 		'texture': 'res://assets/images/yellow_entrails.png'

@@ -1,10 +1,9 @@
 hilgrum_haberdash: Hello.
 - Stab this thing. | [if {items.knife} == true]
-	[sound path="res://assets/sounds/squareclick.wav" volume="0.0"]
 	hilgrum_haberdash: Oh! I hadn't expected that.
-	set {items.yellow_entrails} = true
-	[signal arg="yellow_entrails"]
-	[signal arg="kill.villager_yellow"]
+	set {items.hilgrum_entrails} = true
+	[signal arg="hilgrum_entrails"]
+	[signal arg="kill.hilgrum_haberdash_intro"]
 - Do you know who I am?
 	hilgrum_haberdash: Maybe.
 - Who are you?
