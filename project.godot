@@ -40,6 +40,9 @@ layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/spe
 layout/default_style="res://main/dialog/speakerstyle.tres"
 glossary/default_case_sensitive=true
 variables={
+"divination": {
+"haruspicy": false
+},
 "items": {
 "fool_entrails": false,
 "hilgrum_entrails": false,
@@ -49,6 +52,7 @@ variables={
 "village": {
 "talked": {
 "BlueTalked": false,
+"RattyDone": false,
 "RattyIntroTalked": false,
 "YellowTalked": false
 }
