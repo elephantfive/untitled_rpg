@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=14 format=4 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://n5o5a24y33ct" path="res://assets/images/rattyhampusbumfuzzlecolored.png" id="4_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://b24xhmor7akhs" path="res://assets/images/cheezanim.png" id="4_gee14"]
 [ext_resource type="PackedScene" uid="uid://d20xppx4klv1s" path="res://main/entities/villager.tscn" id="4_iywne"]
+[ext_resource type="Script" uid="uid://sa8yqcdpwcw0" path="res://scripts/item_desc.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dcbfc3dso4jrn" path="res://assets/images/villagerhead3.png" id="5_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://ctjt8tpy7m87o" path="res://assets/images/testtilemap.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b8su5fcrgj33x" path="res://assets/images/facelesshead.png" id="6_vtaks"]
@@ -54,6 +55,7 @@ unique_name_in_owner = true
 script = ExtResource("11_kvpfn")
 
 [node name="item_desc" type="VBoxContainer" parent="HUD"]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 1
 anchor_left = 1.0
@@ -61,36 +63,40 @@ anchor_right = 1.0
 offset_left = -33.0
 offset_bottom = 23.0
 grow_horizontal = 0
+script = ExtResource("4_kvpfn")
 
-[node name="Label" type="Label" parent="HUD/item_desc"]
+[node name="item_name" type="Label" parent="HUD/item_desc"]
 layout_mode = 2
-text = "pee!"
 
-[node name="inventory_box" type="GridContainer" parent="HUD" groups=["inventory"]]
+[node name="item_texture" type="TextureRect" parent="HUD/item_desc"]
+layout_mode = 2
+expand_mode = 4
+
+[node name="item_type" type="Label" parent="HUD/item_desc"]
+layout_mode = 2
+
+[node name="item_desc" type="Label" parent="HUD/item_desc"]
+layout_mode = 2
+
+[node name="inventory_container" type="VBoxContainer" parent="HUD" groups=["inventory"]]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -15.5
-offset_right = 25.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inventory_close" type="Button" parent="HUD/inventory_container" groups=["inventory"]]
+visible = false
+layout_mode = 2
+text = "Close"
+
+[node name="inventory_box" type="GridContainer" parent="HUD/inventory_container" groups=["inventory"]]
+unique_name_in_owner = true
+layout_mode = 2
 columns = 5
 
 [node name="inventory_button" type="Button" parent="HUD"]
 offset_right = 83.0
 offset_bottom = 40.0
 text = "Inventory"
-
-[node name="inventory_close" type="Button" parent="HUD" groups=["inventory"]]
-visible = false
-offset_right = 50.0
-offset_bottom = 31.0
-text = "Close"
 
 [node name="Entities" type="Node2D" parent="."]
 
@@ -157,5 +163,5 @@ offset_right = 662.0
 offset_bottom = 406.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="pressed" from="HUD/inventory_container/inventory_close" to="HUD" method="_on_close_pressed"]
 [connection signal="pressed" from="HUD/inventory_button" to="HUD" method="_on_inventory_button_pressed"]
-[connection signal="pressed" from="HUD/inventory_close" to="HUD" method="_on_close_pressed"]

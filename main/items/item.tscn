@@ -10,4 +10,4 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u201h")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

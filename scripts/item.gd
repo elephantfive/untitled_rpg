@@ -1,9 +1,20 @@
 extends Button
 
-@export var sprite_texture: String
+var texture: String
 var desc: String
-@onready var sprite = $Sprite2D
+var type: String
+var hud: CanvasLayer
 
 func _ready():
-	sprite.texture = sprite_texture
 	text = name
+
+
+func _on_pressed():
+	if hud.item_desc.visible == false:
+		hud.item_desc.item_name.text = name
+		hud.item_desc.item_texture.texture = load(texture)
+		hud.item_desc.item_type.text = type
+		hud.item_desc.item_desc.text = desc
+		hud.item_desc.show()
+	else:
+		hud.item_desc.hide()
