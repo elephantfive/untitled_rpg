@@ -1,0 +1,15 @@
+if {village.talked.BlueTalked} == false:
+	set {village.talked.BlueTalked} = true
+	incandescent_fool: Hidey-ho. It's been a while since we've had occasion to juggle together.
+	incandescent_fool: Or maybe we've never juggled before. I can't really remember.
+	incandescent_fool: Either way, it is likely of utmost urgency that we juggle at your soonest convenience.
+	jump questions
+incandescent_fool: Hidey-ho. Is it time to juggle, or what?
+label questions
+- Stab this thing and take its entrails. | [if {items.knife} == true]
+- I've naught to juggle with. | [if {items.juggleballs} == false]
+	incandescent_fool: A crying shame.
+- It's time to juggle. | [if {items.juggleballs} == true]
+	incandescent_fool: Indubitably!
+- I don't want to juggle right now. | [if {items.juggleballs} == true]
+	incandescent_fool: You will regret this.
