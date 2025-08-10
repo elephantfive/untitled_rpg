@@ -127,7 +127,6 @@ text = "Inventory"
 
 [node name="Inventory" type="Control" parent="Entities/Player"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -538.0
@@ -135,6 +134,15 @@ offset_top = -283.0
 offset_right = -538.0
 offset_bottom = -283.0
 script = ExtResource("11_kvpfn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Entities/Player/Inventory"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Entities/Player/Inventory/VBoxContainer"]
+layout_mode = 2
+text = "pee!"
 
 [node name="GridContainer" type="GridContainer" parent="Entities/Player/Inventory"]
 layout_mode = 0
@@ -145,10 +153,6 @@ columns = 5
 [node name="Close" type="Button" parent="Entities/Player/Inventory/GridContainer"]
 layout_mode = 2
 text = "Close"
-
-[node name="TestItem2" type="Button" parent="Entities/Player/Inventory/GridContainer"]
-layout_mode = 2
-text = "Test item!"
 
 [node name="PlayerBlackBox" type="ColorRect" parent="Entities/Player"]
 unique_name_in_owner = true
