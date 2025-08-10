@@ -1,13 +1,15 @@
 if {BlueTalked} == false:
 	set {BlueTalked} = true
-	villager_blue: Been a while since we've seen you around.
-	villager_blue: Or maybe we've never seen you. I can't really remember.
-	villager_blue: Either way, welcome.
+	villager_blue: Hidey-ho. It's been a while since we've had occasion to juggle together.
+	villager_blue: Or maybe we've never juggled before. I can't really remember.
+	villager_blue: Either way, it is likely of utmost urgency that we juggle at your soonest convenience.
 	jump questions
-villager_blue: Greetings. What can I do for you?
+villager_blue: Hidey-ho. Is it time to juggle, or what?
 label questions
 - Stab this thing and take its entrails. | [if {DaggerGet} == true]
-- What do you know about me?
-	villager_blue: It's hard to say. I'm not the best person to ask.
-- What's going on? What's with all these carts?
-	villager_blue: I'm not exactly sure. You might want to ask around - someone else may know.
+- I've naught to juggle with. | [if {JuggleBallsGet} == false]
+	villager_blue: A crying shame.
+- It's time to juggle. | [if {JuggleBallsGet} == true]
+	villager_blue: Indubitably!
+- I don't want to juggle right now. | [if {JuggleBallsGet} == true]
+	villager_blue: You will regret this.
