@@ -79,7 +79,6 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.231373)
 
 [node name="DialogicNode_PortraitContainer" type="Control" parent="Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor"]
 layout_mode = 1
@@ -114,7 +113,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "Some text"
-scroll_following = true
 visible_characters_behavior = 1
 script = ExtResource("3_11puy")
 textbox_root = NodePath("../../..")

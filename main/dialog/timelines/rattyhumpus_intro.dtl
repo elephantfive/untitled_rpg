@@ -1,12 +1,13 @@
-rattyhumpus: Well, it's about time - wakey wakey!
-rattyhumpus: I don't recognize you at all. If I put a mirror in front of you, something tells me you wouldn't recognize yourself, either. Isn't there something humbling about all that?
-rattyhumpus: Maybe not humbling. Not being able to recognize yourself speaks to a certain darkness, doesn't it? Makes you itch for something imperceptible, something you can't name because the name's been lost.
-rattyhumpus: Then again, you're also free to just name yourself. You don't recognize who you were, but maybe you'll recognize whoever it is you become. If not, the world's filled to the brim with people who don't know who they are. You'll fit right in.
-rattyhumpus: So what'll it be? Do you seek an answer to find out what lies in the darkness of the soul? Or will you make the answer yourself?
-- I will find out who I am.
-- I will create myself anew.
-rattyhumpus: That's real nice. You know, I'd have chosen the same thing, given the choice.
-rattyhumpus: I didn't have a choice, though. I'm Rattyhumpus Bumfuzzle. Ratty for short, if it pleases you.
-rattyhumpus: I'm the local haruspex. I can read entrails. In fact, I came to this place looking for some, but I can't find them. Why don't you make yourself useful and look around for them?
+if {village.talked.RattyIntroTalked} == false:
+	set {village.talked.RattyIntroTalked} = true
+	rattyhumpus: Well, it's about time - wakey wakey!
+	rattyhumpus: I don't recognize you at all. If I put a mirror in front of you, something tells me you wouldn't recognize yourself, either. Isn't there something humbling about all that?
+	rattyhumpus: Maybe not humbling. Not being able to recognize yourself speaks to a certain darkness, doesn't it? Makes you itch for something imperceptible, something you can't name because the name's been lost.
+	rattyhumpus: Then again, you're also free to just name yourself. You don't recognize who you were, but maybe you'll recognize whoever it is you become. If not, the world's filled to the brim with people who don't know who they are. You'll fit right in.
+	rattyhumpus: So what'll it be? Do you seek an answer to find out what lies in the darkness of the soul? Or will you make the answer yourself?
+	- I will find out who I am.
+	- I will create myself anew.
+	rattyhumpus: That's real nice. You know, I'd have chosen the same thing, given the choice.
+	rattyhumpus: I didn't have a choice, though. I'm Rattyhumpus Bumfuzzle. Ratty for short, if it pleases you.
+	rattyhumpus: I'm the local haruspex. I can read entrails. In fact, I came to this place looking for some, but I can't find them. Why don't you make yourself useful and look around for them?
 rattyhumpus: Go on then, get! Find me some entrails!
-[signal arg="player_unpause"]

@@ -24,7 +24,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "faceless_guard": "res://main/dialog/characters/faceless_guard.dch",
 "rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch",
-"vilage_blacksmith": "res://main/dialog/characters/vilage_blacksmith.dch",
+"vilage_blacksmith": "res://main/dialog/characters/village_blacksmith.dch",
 "villager_blue": "res://main/dialog/characters/villager_blue.dch",
 "villager_yellow": "res://main/dialog/characters/villager_yellow.dch"
 }
@@ -40,7 +40,19 @@ layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/spe
 layout/default_style="res://main/dialog/speakerstyle.tres"
 glossary/default_case_sensitive=true
 variables={
-"BlueTalked": false
+"items": {
+"blue_entrails": false,
+"juggleballs": false,
+"knife": false,
+"yellow_entrails": false
+},
+"village": {
+"talked": {
+"BlueTalked": false,
+"RattyIntroTalked": false,
+"YellowTalked": false
+}
+}
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -51,9 +63,9 @@ text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
 audio/max_channels=4.0
 animations/join_default_length=0.5
-animations/join_default_wait=true
+animations/join_default_wait=false
 animations/leave_default_length=0.5
-animations/leave_default_wait=true
+animations/leave_default_wait=false
 animations/cross_fade_default_length=0.5
 choices/autofocus_first=true
 choices/delay=0.2
@@ -62,6 +74,19 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+history/simple_history_enabled=true
+animations/join_default="Instant In"
+animations/leave_default="Instant Out"
+text/autocolor_names=true
+glossary/glossary_files=["res://main/dialog/glossaries/default_glossary.tres"]
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -131,3 +156,17 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+wheel_down={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(105, 8),"global_position":Vector2(114, 56),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+wheel_up={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(73, 5),"global_position":Vector2(82, 53),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
