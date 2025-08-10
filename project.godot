@@ -52,7 +52,7 @@ variables={
 "village": {
 "talked": {
 "BlueTalked": false,
-"RattyDone": false,
+"RattyIntroDone": false,
 "RattyIntroTalked": false,
 "YellowTalked": false
 }

@@ -1,4 +1,4 @@
-if {village.talked.RattyDone}:
+if {village.talked.RattyIntroDone}:
 	rattyhumpus: Go talk to Gilliam the Pince. I've taught you all I can.
 	[end_timeline]
 
@@ -42,5 +42,5 @@ A split path lies before this person, though they already know where their feet 
 	rattyhumpus: But it was out of my league. I can't really tell you any specifics or even what any of those details mean. You'll want to speak to other prognosticators, see what they can tell you. Or, hell, you might give it a shot yourself. I'll teach you the basics of haruspicy before you leave.
 	rattyhumpus: One way or another, you'll need to convince Gilliam the Pince to let you out of here. Ain't no other prognosticators around but me. Give 'em a chat, and maybe you'll find yourself outta here in no time.
 	rattyhumpus: Well, probably not. Gilliam's a bit of an ass. Good luck anyway.
-	set {village.talked.RattyDone} = true
+	set {village.talked.RattyIntroDone} = true
 	set {divination.haruspicy} = true

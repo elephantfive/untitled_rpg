@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://n5o5a24y33ct" path="res://assets/images/rattyhampusbumfuzzlecolored.png" id="4_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://d20xppx4klv1s" path="res://main/entities/villager.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://d20xppx4klv1s" path="res://main/entities/npc.tscn" id="4_iywne"]
 [ext_resource type="Script" uid="uid://sa8yqcdpwcw0" path="res://scripts/item_desc.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ctjt8tpy7m87o" path="res://assets/images/testtilemap.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://c51jjjhaa2tfk" path="res://assets/images/acrobaticsguycolored.png" id="7_dinhu"]
