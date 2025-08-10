@@ -30,7 +30,7 @@ scene = ExtResource("4_pcj5l")
 overrides = {
 "box_modulate_custom_color": "Color(0.890625, 0.890625, 0.890625, 1)",
 "box_modulate_global_color": "false",
-"name_label_color_mode": "2",
+"name_label_color_mode": "1",
 "name_label_custom_color": "Color(0, 0, 0, 1)",
 "portrait_bg_modulate": "Color(0, 0, 0, 0)",
 "text_custom_color": "Color(0, 0, 0, 1)",

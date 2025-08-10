@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.898438, 1, 0, 1),
+&"color": Color(0.55, 0.442017, 0.209, 1),
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -17,11 +17,11 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://assets/images/villagerhead3.png\""
+"image": "\"res://assets/images/curlygirlcolored.png\""
 },
 "mirror": false,
-"offset": Vector2(5, 0),
-"scale": 1,
+"offset": Vector2(0, 300),
+"scale": 3.5,
 "scene": ""
 }
 },

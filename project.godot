@@ -40,9 +40,16 @@ layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/spe
 layout/default_style="res://main/dialog/speakerstyle.tres"
 glossary/default_case_sensitive=true
 variables={
+"items": {
+"juggleballs": false,
+"knife": false
+},
+"village": {
+"talked": {
 "BlueTalked": false,
-"DaggerGet": false,
-"JuggleBallsGet": false
+"RattyIntroTalked": false
+}
+}
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -68,6 +75,7 @@ history/simple_history_enabled=true
 animations/join_default="Instant In"
 animations/leave_default="Instant Out"
 text/autocolor_names=true
+glossary/glossary_files=["res://main/dialog/glossaries/default_glossary.tres"]
 
 [display]
 

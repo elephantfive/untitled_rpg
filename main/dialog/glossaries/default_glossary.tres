@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" load_steps=2 format=3 uid="uid://cucppe8xxrvb4"]
+
+[ext_resource type="Script" uid="uid://cwjymnyahxjyn" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_15nap"]
+
+[resource]
+script = ExtResource("1_15nap")
+entries = {
+"Ratty": "Rattyhumpus Bumfuzzle",
+"Rattyhumpus Bumfuzzle": {
+"alternatives": ["Ratty"],
+"case_sensitive": true,
+"name": "Rattyhumpus Bumfuzzle",
+"text": "Local haruspex, which is to say, entrail diviner.",
+"title": "Rattyhumpus Bumfuzzle"
+}
+}
+enabled = true
+_translation_id = ""
+_translation_keys = {}

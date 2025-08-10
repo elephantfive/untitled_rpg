@@ -7,6 +7,7 @@ var itemlist = {
 		},
 	
 }
+
 var inv_open = false
 @onready var inventory_button = $inventory_button
 @onready var inventory_box = %inventory_box
