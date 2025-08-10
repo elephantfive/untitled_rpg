@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=13 format=4 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ctjt8tpy7m87o" path="res://assets/images/testtilemap.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b8su5fcrgj33x" path="res://assets/images/facelesshead.png" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://ctxbyo75rasew" path="res://assets/images/buildingplaceholder.png" id="7_kvpfn"]
-[ext_resource type="Script" uid="uid://idjv1ltj4pii" path="res://scripts/hud.gd" id="10_vtaks"]
-[ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/inventory.gd" id="11_kvpfn"]
+[ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
 texture = ExtResource("6_u5sy4")
@@ -49,6 +48,49 @@ tile_set = SubResource("TileSet_0tnpc")
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_lnu2h")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_kvpfn")
+
+[node name="item_desc" type="VBoxContainer" parent="HUD"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="HUD/item_desc"]
+layout_mode = 2
+text = "pee!"
+
+[node name="inventory_box" type="GridContainer" parent="HUD" groups=["inventory"]]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -15.5
+offset_right = 25.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="inventory_button" type="Button" parent="HUD"]
+offset_right = 83.0
+offset_bottom = 40.0
+text = "Inventory"
+
+[node name="inventory_close" type="Button" parent="HUD" groups=["inventory"]]
+visible = false
+offset_right = 50.0
+offset_bottom = 31.0
+text = "Close"
 
 [node name="Entities" type="Node2D" parent="."]
 
@@ -106,54 +148,6 @@ unique_name_in_owner = true
 position = Vector2(538, 283)
 motion_mode = 1
 
-[node name="HUD" type="Control" parent="Entities/Player"]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -538.0
-offset_top = -283.0
-offset_right = -538.0
-offset_bottom = -283.0
-script = ExtResource("10_vtaks")
-
-[node name="HBox1" type="HBoxContainer" parent="Entities/Player/HUD"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="inventory_button" type="Button" parent="Entities/Player/HUD/HBox1"]
-layout_mode = 2
-text = "Inventory"
-
-[node name="Inventory" type="Control" parent="Entities/Player"]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -538.0
-offset_top = -283.0
-offset_right = -538.0
-offset_bottom = -283.0
-script = ExtResource("11_kvpfn")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Entities/Player/Inventory"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Entities/Player/Inventory/VBoxContainer"]
-layout_mode = 2
-text = "pee!"
-
-[node name="GridContainer" type="GridContainer" parent="Entities/Player/Inventory"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 5
-
-[node name="Close" type="Button" parent="Entities/Player/Inventory/GridContainer"]
-layout_mode = 2
-text = "Close"
-
 [node name="PlayerBlackBox" type="ColorRect" parent="Entities/Player"]
 unique_name_in_owner = true
 visible = false
@@ -163,5 +157,5 @@ offset_right = 662.0
 offset_bottom = 406.0
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="Entities/Player/HUD/HBox1/inventory_button" to="Entities/Player/HUD" method="_on_inventory_button_pressed"]
-[connection signal="pressed" from="Entities/Player/Inventory/GridContainer/Close" to="Entities/Player/HUD" method="_on_close_pressed"]
+[connection signal="pressed" from="HUD/inventory_button" to="HUD" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="HUD/inventory_close" to="HUD" method="_on_close_pressed"]

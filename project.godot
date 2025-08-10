@@ -67,6 +67,14 @@ history/simple_history_enabled=true
 animations/join_default="Instant In"
 animations/leave_default="Instant Out"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

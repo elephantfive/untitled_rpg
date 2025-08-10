@@ -1,7 +1,7 @@
 extends Node
 @onready var player = %Player
 @onready var player_black_box = %PlayerBlackBox
-@onready var inventory = %Inventory
+@onready var hud = %HUD
 
 func _ready():
 	#Dialogic.start('game_start')
@@ -14,8 +14,8 @@ func _on_dialogic_signal(argument:String):
 	elif argument == "player_unpause":
 		unpause(player)
 		#player_black_box.visible = false
-	elif argument in inventory.itemlist:
-		inventory.additem(argument)
+	elif argument in hud.itemlist:
+		hud.additem(argument)
 	
 func pause(scene):
 	scene.set_deferred("process_mode", PROCESS_MODE_DISABLED)
