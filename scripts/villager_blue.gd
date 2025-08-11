@@ -4,6 +4,8 @@ var dialogue_allowed: bool = true
 @onready var sprite_highlight = $Sprite3D2
 @onready var sprite = $Sprite3D
 @onready var player = %Player
+@onready var collision_shape_3d = $CollisionShape3D
+
 
 func _ready():
 	sprite_highlight.texture = sprite.texture

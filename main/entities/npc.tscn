@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d20xppx4klv1s"]
+[gd_scene load_steps=3 format=3 uid="uid://d20xppx4klv1s"]
 
 [ext_resource type="Script" uid="uid://db6t8xmvtw5d7" path="res://scripts/villager_blue.gd" id="1_aphsj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qaask"]
+radius = 2.0
 
 [node name="villager" type="Area3D"]
 collision_layer = 4
@@ -10,6 +13,9 @@ script = ExtResource("1_aphsj")
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 0, 0, 0, 0)
 visible = false
 modulate = Color(0.160784, 0.631373, 1, 0.588235)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qaask")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
