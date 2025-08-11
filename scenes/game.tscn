@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=13 format=4 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -34,6 +34,15 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gee14")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5sy4"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gee14"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u5sy4"]
+radius = 2.0
+
 [node name="Game" type="Node"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -46,6 +55,17 @@ tile_set = SubResource("TileSet_0tnpc")
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_lnu2h")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground"]
+shape = SubResource("BoxShape3D_u5sy4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground"]
+mesh = SubResource("BoxMesh_gee14")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -100,9 +120,14 @@ text = "Inventory"
 [node name="Village" type="Node" parent="Entities"]
 
 [node name="RattyhumpusIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.577562, 2.52488, -2.87961)
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/RattyhumpusIntro"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("4_0tnpc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entities/Village/RattyhumpusIntro"]
+shape = SubResource("SphereShape3D_u5sy4")
 
 [node name="IncandescentFoolIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
 
@@ -122,7 +147,10 @@ texture = ExtResource("4_0tnpc")
 
 [node name="Player" parent="Entities" instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-motion_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77476, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Entities/Player"]
+transform = Transform3D(1, 0, 0, 0, 0.811594, 0.584221, 0, -0.584221, 0.811594, 0, 3.79745, 7.48665)
 
 [connection signal="pressed" from="HUD/InventoryContainer/InventoryClose" to="HUD" method="_on_close_pressed"]
 [connection signal="pressed" from="HUD/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]
