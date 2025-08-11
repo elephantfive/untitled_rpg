@@ -1,13 +1,13 @@
-extends Area2D
+extends Area3D
 var dialogue_allowed: bool = true
 @onready var game_manager: Node = %GameManager
-@onready var sprite_highlight = $Sprite2D2
-@onready var sprite_2d = $Sprite2D
+@onready var sprite_highlight = $Sprite3D2
+@onready var sprite = $Sprite3D
 @onready var player = %Player
 
 func _ready():
-	sprite_highlight.texture = sprite_2d.texture
-	sprite_highlight.scale = sprite_2d.scale * 1.1
+	sprite_highlight.texture = sprite.texture
+	sprite_highlight.scale = sprite.scale * 1.1
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _on_dialogic_signal(argument:String):
