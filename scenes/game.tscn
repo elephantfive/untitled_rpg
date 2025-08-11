@@ -164,7 +164,13 @@ texture = ExtResource("10_kvuet")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553968, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Entities/Player"]
+[node name="Camroot" type="Node3D" parent="Entities/Player"]
+
+[node name="Horizontal" type="Node3D" parent="Entities/Player/Camroot"]
+
+[node name="Vertical" type="Node3D" parent="Entities/Player/Camroot/Horizontal"]
+
+[node name="Camera3D" type="Camera3D" parent="Entities/Player/Camroot/Horizontal/Vertical"]
 transform = Transform3D(1, 0, 0, 0, 0.811594, 0.584221, 0, -0.584221, 0.811594, 0, 3.79745, 7.48665)
 script = ExtResource("12_dinhu")
 
