@@ -5,6 +5,13 @@
 [resource]
 script = ExtResource("1_15nap")
 entries = {
+"Hilgrum": "Hilgrum Haberdash",
+"Hilgrum Haberdash": {
+"alternatives": ["Hilgrum"],
+"name": "Hilgrum Haberdash",
+"text": "She's the talk of the town! She knows both how to dress and to remove eyes cleanly from sockets.",
+"title": "Doctor, Fashionista, Enucleator"
+},
 "Ratty": "Rattyhumpus Bumfuzzle",
 "Rattyhumpus Bumfuzzle": {
 "alternatives": ["Ratty"],

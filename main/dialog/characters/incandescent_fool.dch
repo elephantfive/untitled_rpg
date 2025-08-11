@@ -2,26 +2,26 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 1, 1, 1),
+&"color": Color(0.0424652, 0.472656, 0.13993, 1),
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "speakerstyle"
 },
 &"default_portrait": "default",
 &"description": "",
-&"display_name": "Faceless Guard",
+&"display_name": "Incandescent Fool",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://assets/images/facelesshead.png\""
+"image": "\"res://assets/images/acrobaticsguycolored.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1.0,
+"offset": Vector2(50, 125),
+"scale": 2.0,
 "scene": ""
 }
 },

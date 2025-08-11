@@ -1,3 +1,7 @@
+if {village.talked.RattyIntroDone}:
+	rattyhumpus: Go talk to Gilliam the Pince. I've taught you all I can.
+	[end_timeline]
+
 if {village.talked.RattyIntroTalked} == false:
 	set {village.talked.RattyIntroTalked} = true
 	rattyhumpus: Well, it's about time - wakey wakey!
@@ -10,4 +14,33 @@ if {village.talked.RattyIntroTalked} == false:
 	rattyhumpus: That's real nice. You know, I'd have chosen the same thing, given the choice.
 	rattyhumpus: I didn't have a choice, though. I'm Rattyhumpus Bumfuzzle. Ratty for short, if it pleases you.
 	rattyhumpus: I'm the local haruspex. I can read entrails. In fact, I came to this place looking for some, but I can't find them. Why don't you make yourself useful and look around for them?
-rattyhumpus: Go on then, get! Find me some entrails!
+if {items.fool_entrails} == false and {items.hilgrum_entrails} == false:
+	rattyhumpus: Go on then, get! Find me some entrails!
+- Present the Incandescent Fool's entrails. | [if {items.fool_entrails} == true]
+	set {items.fool_entrails} = false
+	rattyhumpus: All striped and silly - those are the entrails of a fool, no doubt. Bring them closer, and I'll get to mushing.
+	Ratty splays the entrails on the ground and kicks them around haphazardly. At least, it seems haphazard to you. Haruspicy is an art with which you are not familiar, and you can't quite understand everything that's going on.
+	After a moment of kicking and groping and all sorts of defiling of the entrails, Ratty brushes off their knees and looks back to you.
+	rattyhumpus: Erm, yeah. The thing about Fools is their silly guts. Can't always make sense of them. I'll tell you what I could glean, though\:
+	rattyhumpus: A really, really long joke. It stretches back almost to the dawn of time. Or at least our conception; that's unclear. It's meant to be a lighthearted joke, but there are occasional hints of dark humor. Murder and the like. Been a while since we've seen a good one around here...
+	rattyhumpus: Anyways, the joke keeps going. Wow. It's really long. Are you sure you want to hear all this? I'm giving you one more chance to turn around before I read you the whole thing.
+	- I want to hear it. I must. There's no version of reality in which I do not hear the joke.
+		rattyhumpus: Well, I'm not writing the whole thing out now. Here's some placeholder text in the meantime.
+	- My life will be better without hearing the joke, but I thank you for the offer.
+		rattyhumpus: Well, you're missing out on some of life's greatest mysteries. At any rate, these weren't the entrails I was looking for. Keep searching!
+- Present Hilgrum's entrails. | [if {items.hilgrum_entrails} == true]
+	set {items.hilgrum_entrails} = false
+	rattyhumpus: Sharp, fasionable, witty - you have Hilgrum's entrails, don't you? Come on, give 'em here. Let's see what we've got.
+	rattyhumpus: Oh, yes. Hilgrum is an enucleator, you know that? She likes to take people's eyes right out of their sockets. It's not psychopathic or any other deviation from traditional ways of thinking; it's just her special trait. And a special trait makes for some special haruspicy...
+	Ratty picks up the entrails - a muscle tissue tube - and places one end on each eye, wrapping the bulk around their neck like a scarf. Wet blood and bodily fluid sticks to their clothing.
+	rattyhumpus: You got the good stuff here, buddy. Hoo yeah! \
+Thanks for the entrails, let me give you a reading\:
+	rattyhumpus: Bodies upon bodies upon bodies will fall into one another, an unending and cataclysm whirlwind of skin stretched out over the horizon endlessly, engulfing all the world.\
+At the epicenter of this bulging bodily cacophony stands only a single individual. Countless coconspirators lackeys, servants, slaves, and manipulated fools, but only one cause.\
+A split path lies before this person, though they already know where their feet will fall. Annihilation cannot be averted.
+	rattyhumpus: Huh! Never read that one before. Usually it's just 'you will receive good news in the weeks to come,' or 'you are a good friend,' and I never thought those were particularly impressive. What you just heard, though, that was something.
+	rattyhumpus: But it was out of my league. I can't really tell you any specifics or even what any of those details mean. You'll want to speak to other prognosticators, see what they can tell you. Or, hell, you might give it a shot yourself. I'll teach you the basics of haruspicy before you leave.
+	rattyhumpus: One way or another, you'll need to convince Gilliam the Pince to let you out of here. Ain't no other prognosticators around but me. Give 'em a chat, and maybe you'll find yourself outta here in no time.
+	rattyhumpus: Well, probably not. Gilliam's a bit of an ass. Good luck anyway.
+	set {village.talked.RattyIntroDone} = true
+	set {divination.haruspicy} = true

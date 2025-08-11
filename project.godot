@@ -22,33 +22,37 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"faceless_guard": "res://main/dialog/characters/faceless_guard.dch",
+"gilliam_the_pince": "res://main/dialog/characters/gilliam_the_pince.dch",
+"hilgrum_haberdash": "res://main/dialog/characters/hilgrum_haberdash.dch",
+"incandescent_fool": "res://main/dialog/characters/incandescent_fool.dch",
 "rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch",
-"vilage_blacksmith": "res://main/dialog/characters/village_blacksmith.dch",
-"villager_blue": "res://main/dialog/characters/villager_blue.dch",
-"villager_yellow": "res://main/dialog/characters/villager_yellow.dch"
+"vilage_blacksmith": "res://main/dialog/characters/village_blacksmith.dch"
 }
 directories/dtl_directory={
-"faceless_guard": "res://main/dialog/timelines/faceless_guard.dtl",
 "game_start": "res://main/dialog/timelines/game_start.dtl",
+"gilliam_the_pince_intro": "res://main/dialog/timelines/gilliam_the_pince_intro.dtl",
+"hilgrum_haberdash_intro": "res://main/dialog/timelines/hilgrum_haberdash_intro.dtl",
+"incandescent_fool_intro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
 "rattyhumpus_intro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
-"village_blacksmith": "res://main/dialog/timelines/village_blacksmith.dtl",
-"villager_blue": "res://main/dialog/timelines/villager_blue.dtl",
-"villager_yellow": "res://main/dialog/timelines/villager_yellow.dtl"
+"village_blacksmith": "res://main/dialog/timelines/village_blacksmith.dtl"
 }
 layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/speakerstyleagain.tres"]
 layout/default_style="res://main/dialog/speakerstyle.tres"
 glossary/default_case_sensitive=true
 variables={
+"divination": {
+"haruspicy": false
+},
 "items": {
-"blue_entrails": false,
+"fool_entrails": false,
+"hilgrum_entrails": false,
 "juggleballs": false,
-"knife": false,
-"yellow_entrails": false
+"knife": false
 },
 "village": {
 "talked": {
 "BlueTalked": false,
+"RattyIntroDone": false,
 "RattyIntroTalked": false,
 "YellowTalked": false
 }

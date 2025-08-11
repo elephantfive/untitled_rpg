@@ -1,0 +1,12 @@
+hilgrum_haberdash: Hello.
+- Stab this thing. | [if {items.knife} == true]
+	hilgrum_haberdash: Oh! I hadn't expected that.
+	set {items.hilgrum_entrails} = true
+	[signal arg="hilgrum_entrails"]
+	[signal arg="kill.hilgrum_haberdash_intro"]
+- Do you know who I am?
+	hilgrum_haberdash: Maybe.
+- Who are you?
+	hilgrum_haberdash: Who? Me? I wouldn't know any better than you.
+- Where are we?
+	hilgrum_haberdash: We're right at the center of numerous prophecies, some more important than others.
