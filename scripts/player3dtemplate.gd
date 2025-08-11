@@ -1,5 +1,6 @@
 extends CharacterBody3D
 @onready var hud = %HUD
+@onready var camera_3d = $Camera3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

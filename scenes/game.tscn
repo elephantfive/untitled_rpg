@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=17 format=4 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://davhsqfghv12f" path="res://assets/images/cheesestarcolored.png" id="9_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ctxbyo75rasew" path="res://assets/images/buildingplaceholder.png" id="10_kvuet"]
 [ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
+[ext_resource type="Script" uid="uid://cujckeagchh8i" path="res://scripts/camera_3d.gd" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
 texture = ExtResource("6_u5sy4")
@@ -122,27 +123,31 @@ text = "Inventory"
 
 [node name="RattyhumpusIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
 transform = Transform3D(0.988777, 0.149397, 0, -0.149397, 0.988777, 0, 0, 0, 1, -0.577562, 1.27434, -2.87961)
+metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/RattyhumpusIntro"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("4_0tnpc")
 
 [node name="IncandescentFoolIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9774, 2.00086, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4185, 1.7917, -0.609785)
+metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/IncandescentFoolIntro"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("7_gee14")
 
 [node name="HilgrumHaberdashIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.33693, 3.44593, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44251, 2.05251, 0.40699)
+metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/HilgrumHaberdashIntro"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 texture = ExtResource("8_kvpfn")
 
 [node name="GilliamThePinceIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55882, 2.55752, 0)
+transform = Transform3D(0.961689, 0.274144, 0, -0.274144, 0.961689, 0, 0, 0, 1, 6.73098, 2.22724, -0.0381098)
+metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/GilliamThePinceIntro"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -150,16 +155,18 @@ texture = ExtResource("9_dinhu")
 
 [node name="IntroBlacksmith" parent="Entities/Village" instance=ExtResource("4_iywne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19626, 1.33391, 0)
+metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/IntroBlacksmith"]
 texture = ExtResource("10_kvuet")
 
 [node name="Player" parent="Entities" instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77476, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553968, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Entities/Player"]
 transform = Transform3D(1, 0, 0, 0, 0.811594, 0.584221, 0, -0.584221, 0.811594, 0, 3.79745, 7.48665)
+script = ExtResource("12_dinhu")
 
 [connection signal="pressed" from="HUD/InventoryContainer/InventoryClose" to="HUD" method="_on_close_pressed"]
 [connection signal="pressed" from="HUD/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]
