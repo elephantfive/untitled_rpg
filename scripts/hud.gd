@@ -4,13 +4,19 @@ var itemlist = {
 		'title': 'Rusty Dagger',
 		'type': 'Weapon', 
 		'desc': 'Useful for cutting things and procuring entrails.',
-		'texture': 'res://assets/images/knife.png'
+		'texture': 'res://assets/images/knife.png',
 		},
 	"hilgrum_entrails": {
 		'title': 'Hilgrum\'s Entrails',
 		'type': 'Biological Material',
 		'desc': 'Entrails taken from a villager',
-		'texture': 'res://assets/images/yellow_entrails.png'
+		'texture': 'res://assets/images/yellow_entrails.png',
+	},
+	"fool_entrails": {
+		'title': 'Incandescent Fool\'s Entrails',
+		'type': 'Biological Material',
+		'desc': 'Entrails taken from a villager',
+		'texture': 'res://assets/images/fool_entrails.png',
 	},
 }
 

@@ -1,2 +1,19 @@
-gilliam_the_pince: Hrng.
-This thing does not seem capable of producing articulate speech.
+if {divination.haruspicy} == false:
+	gilliam_the_pince: Hrng.
+	This thing does not seem capable of producing articulate speech.
+if {village.talked.GilliamTalked} == false:
+	set {village.talked.GilliamTalked} = true
+	gilliam_the_pince: Another prognosticator, eh? A haruspex as well, eh? No matter. You shall never leave this place, for I have deemed it so. None have left in several aeons or at least several years.
+	gilliam_the_pince: To be quite honest with you, the passage of time has become a somewhat foreign concept to me. I don't really know the last time someone's left. Nobody's wanted to recently, I think. Again, time is not exactly my strong suit.
+	gilliam_the_pince: Find out what time it is, and I'll tell you when you can leave. If you can leave at all!
+else:
+	gilliam_the_pince: Do you have the time?
+	- Yes. I know precisely what time it is.
+		gilliam_the_pince: That's good. I uh.\
+Listen, the thing about time is that knowing just one point in time doesn't really do much for me. Or anyone. I can't tell you how many seconds (precisely) have passed since you told me that information. I don't have any other reference points for time, past or future.
+		gilliam_the_pince: I know I just asked you to find the time. That was shortsighted of me; my problem is far from being solved. Still, you've done this old Pince a great favor, and for that, I owe you a great favor. How's about we ditch all that time nonsense, all the waiting around, and we send you straight on outta here.
+		gilliam_the_pince: What say you? Should I open the door?
+		- Of course. I have a prognostication which needs interpreting.
+			gilliam_the_pince: Buddy, don't we all. See ya on the other side!
+	- I'm afraid not.
+		gilliam_the_pince: Eek! Then begone!
