@@ -1,6 +1,5 @@
 extends Node
 @onready var player = %Player
-@onready var player_black_box = %PlayerBlackBox
 @onready var hud = %HUD
 
 func _ready():
