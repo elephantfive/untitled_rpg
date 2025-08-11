@@ -3,7 +3,7 @@ hilgrum_haberdash: Hello.
 	hilgrum_haberdash: Oh! I hadn't expected that.
 	set {items.hilgrum_entrails} = true
 	[signal arg="hilgrum_entrails"]
-	[signal arg="kill.hilgrum_haberdash_intro"]
+	[signal arg="kill.HilgrumHaberdashIntro"]
 - Do you know who I am?
 	hilgrum_haberdash: Maybe.
 - Who are you?

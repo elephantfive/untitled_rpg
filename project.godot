@@ -25,16 +25,16 @@ directories/dch_directory={
 "gilliam_the_pince": "res://main/dialog/characters/gilliam_the_pince.dch",
 "hilgrum_haberdash": "res://main/dialog/characters/hilgrum_haberdash.dch",
 "incandescent_fool": "res://main/dialog/characters/incandescent_fool.dch",
-"rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch",
-"vilage_blacksmith": "res://main/dialog/characters/village_blacksmith.dch"
+"intro_blacksmith": "res://main/dialog/characters/village_blacksmith.dch",
+"rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch"
 }
 directories/dtl_directory={
-"game_start": "res://main/dialog/timelines/game_start.dtl",
-"gilliam_the_pince_intro": "res://main/dialog/timelines/gilliam_the_pince_intro.dtl",
-"hilgrum_haberdash_intro": "res://main/dialog/timelines/hilgrum_haberdash_intro.dtl",
-"incandescent_fool_intro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
-"rattyhumpus_intro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
-"village_blacksmith": "res://main/dialog/timelines/village_blacksmith.dtl"
+"GilliamThePinceIntro": "res://main/dialog/timelines/gilliam_the_pince_intro.dtl",
+"HilgrumHaberdashIntro": "res://main/dialog/timelines/hilgrum_haberdash_intro.dtl",
+"IncandescentFoolIntro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
+"IntroBlacksmith": "res://main/dialog/timelines/village_blacksmith.dtl",
+"RattyhumpusIntro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
+"game_start": "res://main/dialog/timelines/game_start.dtl"
 }
 layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/speakerstyleagain.tres"]
 layout/default_style="res://main/dialog/speakerstyle.tres"
