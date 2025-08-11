@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=18 format=4 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://davhsqfghv12f" path="res://assets/images/cheesestarcolored.png" id="9_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ctxbyo75rasew" path="res://assets/images/buildingplaceholder.png" id="10_kvuet"]
 [ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
-[ext_resource type="Script" uid="uid://cujckeagchh8i" path="res://scripts/camera_3d.gd" id="12_dinhu"]
+[ext_resource type="Script" uid="uid://g5ato0a28ibw" path="res://scripts/camroot.gd" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
 texture = ExtResource("6_u5sy4")
@@ -44,6 +44,9 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gee14"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dinhu"]
+radius = 0.07
 
 [node name="Game" type="Node"]
 
@@ -165,14 +168,20 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553968, 0)
 
 [node name="Camroot" type="Node3D" parent="Entities/Player"]
-
-[node name="Horizontal" type="Node3D" parent="Entities/Player/Camroot"]
-
-[node name="Vertical" type="Node3D" parent="Entities/Player/Camroot/Horizontal"]
-
-[node name="Camera3D" type="Camera3D" parent="Entities/Player/Camroot/Horizontal/Vertical"]
-transform = Transform3D(1, 0, 0, 0, 0.811594, 0.584221, 0, -0.584221, 0.811594, 0, 3.79745, 7.48665)
+unique_name_in_owner = true
 script = ExtResource("12_dinhu")
+
+[node name="CamYaw" type="Node3D" parent="Entities/Player/Camroot"]
+
+[node name="CamPitch" type="Node3D" parent="Entities/Player/Camroot/CamYaw"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Entities/Player/Camroot/CamYaw/CamPitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09611, 0)
+shape = SubResource("SphereShape3D_dinhu")
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="Entities/Player/Camroot/CamYaw/CamPitch/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.811594, 0.584221, 0, -0.584221, 0.811594, 0, 1.88341, 3.59047)
 
 [connection signal="pressed" from="HUD/InventoryContainer/InventoryClose" to="HUD" method="_on_close_pressed"]
 [connection signal="pressed" from="HUD/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]
