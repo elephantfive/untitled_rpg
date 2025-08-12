@@ -4,7 +4,6 @@ var dialogue_allowed: bool = true
 @onready var sprite_highlight = $Sprite3D2
 @onready var sprite = $Sprite3D
 @onready var player = %Player
-@onready var collision_shape_3d = $CollisionShape3D
 
 
 func _ready():
@@ -16,18 +15,21 @@ func _on_dialogic_signal(argument:String):
 	if argument == ('kill' + '.' + name):
 		queue_free()
 	
-func _on_input_event(_camera, event, _event_position, _normal, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+func _input(event):
+	if event.is_action('interact'):
+		if distance_check():
 			if Dialogic.current_timeline != null:
 				return
 			else:
 				Dialogic.start(str(name))
 
-func _on_mouse_entered():
-	if dialogue_allowed:
-		$Sprite3D2.show()
+func _process(_delta):
+	if distance_check():
+		sprite.modulate = Color(0.7, 0.7, 1, 0.9)
+	else:
+		sprite.modulate = Color(1, 1, 1, 1)
 
-func _on_mouse_exited():
-	if dialogue_allowed:
-		$Sprite3D2.hide()
+func distance_check():
+	if player.position.x <= position.x + 5 and player.position.x >= position.x - 5:
+		if player.position.z <= position.z + 5 and player.position.z >= position.z - 5:
+			return true
