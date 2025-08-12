@@ -7,7 +7,7 @@ signal set_movement_direction(_movement_direction: Vector3)
 var movement_direction: Vector3
 
 func _ready():
-	set_movement_direction.emit(Vector3.BACK)
+	set_movement_direction.emit(Vector3.FORWARD)
 
 func _input(event):
 	#if event.is_action_pressed('movement') or event.is_action_released("movement"):
@@ -16,6 +16,7 @@ func _input(event):
 		movement_direction.z = Input.get_action_strength('back') - Input.get_action_strength('forward')
 
 func _physics_process(_delta):
+	#camroot.zoom()
 	if is_movement_ongoing():
 		set_movement_direction.emit(movement_direction)
 

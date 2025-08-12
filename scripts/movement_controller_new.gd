@@ -37,6 +37,9 @@ func _physics_process(delta):
 	
 	var target_rotation = atan2(direction.x, direction.z) - player_init_rotation
 	mesh_root.rotation.y = lerp_angle(mesh_root.rotation.y, target_rotation, rotation_speed * delta)
+	
+	
+
 
 
 func _jump():
@@ -44,9 +47,9 @@ func _jump():
 	jump_gravity = velocity.y / apex_duration
 
 
-func _on_set_cam_rotation(_cam_rotation : float):
-	cam_rotation = _cam_rotation
-
-
 func _on_player_set_movement_direction(_movement_direction):
 	direction = _movement_direction.rotated(Vector3.UP, cam_rotation + player_init_rotation)
+
+
+func _on_camroot_set_cam_rotation(_cam_rotation):
+	cam_rotation = _cam_rotation
