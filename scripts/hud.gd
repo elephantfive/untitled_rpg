@@ -21,7 +21,6 @@ var itemlist = {
 }
 
 var inv_open = false
-@onready var inventory_button = $InventoryButton
 @onready var inventory_box = %InventoryBox
 @onready var item_desc = %ItemDesc
 const ITEM = preload("res://main/items/item.tscn")
@@ -36,14 +35,21 @@ func additem(item):
 	inventory_box.add_child(new_item)
 
 
-func _on_inventory_button_pressed():
-	inventory_button.hide()
-	get_tree().call_group("inventory", "show")
-	inv_open = true
+func _input(event):
+	if event.is_action_pressed('inventory'):
+		if inv_open:
+			inv_close()
+		else:
+			get_tree().call_group("inventory", "show")
+			inv_open = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_close_pressed():
-	inventory_button.show()
+	inv_close()
+	
+func inv_close():
 	item_desc.hide()
 	get_tree().call_group("inventory", "hide")
 	inv_open = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

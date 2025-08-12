@@ -22,7 +22,7 @@ func _ready():
 
 func _input(event):
 	#if event is InputEventMouseMotion and (Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and player.hud.inv_open == false:
 		yaw += -event.relative.x * yaw_sensitivity
 		pitch += -event.relative.y * pitch_sensitivity
 

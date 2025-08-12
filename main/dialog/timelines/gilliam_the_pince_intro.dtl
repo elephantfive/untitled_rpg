@@ -1,6 +1,7 @@
 if {divination.haruspicy} == false:
 	gilliam_the_pince: Hrng.
 	This thing does not seem capable of producing articulate speech.
+	[end_timeline]
 if {village.talked.GilliamTalked} == false:
 	set {village.talked.GilliamTalked} = true
 	gilliam_the_pince: Another prognosticator, eh? A haruspex as well, eh? No matter. You shall never leave this place, for I have deemed it so. None have left in several aeons or at least several years.
