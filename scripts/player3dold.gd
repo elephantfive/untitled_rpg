@@ -10,13 +10,11 @@ func _ready():
 	set_movement_direction.emit(Vector3.FORWARD)
 
 func _input(event):
-	#if event.is_action_pressed('movement') or event.is_action_released("movement"):
 	if event.is_action('movement'):
 		movement_direction.x = Input.get_action_strength('right') - Input.get_action_strength('left')
 		movement_direction.z = Input.get_action_strength('back') - Input.get_action_strength('forward')
 
 func _physics_process(_delta):
-	#camroot.zoom()
 	if is_movement_ongoing():
 		set_movement_direction.emit(movement_direction)
 
