@@ -18,7 +18,6 @@ func _on_dialogic_signal(argument:String):
 func _input(event):
 	if event.is_action('interact'):
 		if distance_check():
-			print("yo!")
 			if Dialogic.current_timeline != null:
 				return
 			else:
@@ -26,9 +25,9 @@ func _input(event):
 
 func _process(_delta):
 	if distance_check():
-		$Sprite3D2.show()
+		sprite.modulate = Color(0.7, 0.7, 1, 0.9)
 	else:
-		$Sprite3D2.hide()
+		sprite.modulate = Color(1, 1, 1, 1)
 
 func distance_check():
 	if player.position.x <= position.x + 5 and player.position.x >= position.x - 5:
