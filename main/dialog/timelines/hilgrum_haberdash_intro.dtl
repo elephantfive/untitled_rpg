@@ -4,9 +4,21 @@ hilgrum_haberdash: Hello.
 	set {items.hilgrum_entrails} = true
 	[signal arg="hilgrum_entrails"]
 	[signal arg="kill.HilgrumHaberdashIntro"]
+- Do you know where I can find some juggleballs? | [if {village.juggleballs_looking} == true]
+	hilgrum_haberdash: Plemmen is an aspiring fool.
 - Do you know who I am?
 	hilgrum_haberdash: Maybe.
 - Who are you?
 	hilgrum_haberdash: Who? Me? I wouldn't know any better than you.
 - Where are we?
 	hilgrum_haberdash: We're right at the center of numerous prophecies, some more important than others.
+- Is there anything I can help you with?
+	hilgrum_haberdash: Oh, yes. I just love enucleating people. If you could enucleate everyone you see, I might be able to return the favor.
+	- Sure thing.
+		[end_timeline]
+	- Never!
+		hilgrum_haberdash: My offer and I stand, always.
+	- Enucleate?
+		hilgrum_haberdash: Remove their eyes, beautiful. You can even keep the things for yourself.
+- Do you have the time? | [if {village.talked.GilliamTalked} == true]
+	hilgrum_haberdash: No. Do I look like a chronomancer?

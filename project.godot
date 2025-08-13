@@ -22,12 +22,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"OrphelusBung": "res://main/dialog/characters/OrphelusBung.dch",
-"Plemmen": "res://main/dialog/characters/Plemmen.dch",
 "gilliam_the_pince": "res://main/dialog/characters/gilliam_the_pince.dch",
 "hilgrum_haberdash": "res://main/dialog/characters/hilgrum_haberdash.dch",
 "incandescent_fool": "res://main/dialog/characters/incandescent_fool.dch",
 "intro_blacksmith": "res://main/dialog/characters/village_blacksmith.dch",
+"orphelus_bung": "res://main/dialog/characters/OrphelusBung.dch",
+"plemmen": "res://main/dialog/characters/Plemmen.dch",
 "rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch"
 }
 directories/dtl_directory={
@@ -54,6 +54,8 @@ variables={
 "knife": false
 },
 "village": {
+"enucleate_active": false,
+"juggleballs_looking": false,
 "talked": {
 "FoolTalked": false,
 "GilliamTalked": false,
