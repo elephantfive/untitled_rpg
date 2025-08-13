@@ -12,8 +12,9 @@ hilgrum_haberdash: Hello.
 	hilgrum_haberdash: Who? Me? I wouldn't know any better than you.
 - Where are we?
 	hilgrum_haberdash: We're right at the center of numerous prophecies, some more important than others.
-- Is there anything I can help you with?
+- Is there anything I can help you with? | [if {village.enucleate_active} == false]
 	hilgrum_haberdash: Oh, yes. I just love enucleating people. If you could enucleate everyone you see, I might be able to return the favor.
+	set {village.enucleate_active} = true
 	- Sure thing.
 		[end_timeline]
 	- Never!

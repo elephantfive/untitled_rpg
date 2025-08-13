@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=18 format=3 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -13,10 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://ca421uaysd2tf" path="res://assets/images/npcplaceholder.png" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_gee14"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dinhu"]
+data = PackedVector3Array(-5, 0.05, 5, 5, 0.05, 5, -5, -0.05, 5, 5, 0.05, 5, 5, -0.05, 5, -5, -0.05, 5, 5, 0.05, -5, -5, 0.05, -5, 5, -0.05, -5, -5, 0.05, -5, -5, -0.05, -5, 5, -0.05, -5, 5, 0.05, 5, 5, 0.05, -5, 5, -0.05, 5, 5, 0.05, -5, 5, -0.05, -5, 5, -0.05, 5, -5, 0.05, -5, -5, 0.05, 5, -5, -0.05, -5, -5, 0.05, 5, -5, -0.05, 5, -5, -0.05, -5, 5, 0.05, 5, -5, 0.05, 5, 5, 0.05, -5, -5, 0.05, 5, -5, 0.05, -5, 5, 0.05, -5, -5, -0.05, 5, 5, -0.05, 5, -5, -0.05, -5, 5, -0.05, 5, 5, -0.05, -5, -5, -0.05, -5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5sy4"]
 size = Vector3(60, 2, 60)
 
-[sub_resource type="BoxMesh" id="BoxMesh_gee14"]
+[sub_resource type="BoxMesh" id="BoxMesh_dinhu"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kvpfn"]
@@ -29,6 +35,25 @@ unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_lnu2h")
 
+[node name="Minigames" type="Node" parent="."]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, 5.96046e-08, 1, 0, -1, 5.96046e-08, 0, -6.43008, 0)
+
+[node name="MinigameCamera" type="Camera3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.81189, 0)
+
+[node name="MinigameTable" type="StaticBody3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Minigames/MinigameTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.13606, 0)
+mesh = SubResource("BoxMesh_gee14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Minigames/MinigameTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.13606, 0)
+shape = SubResource("ConcavePolygonShape3D_dinhu")
+
 [node name="Environment" type="Node" parent="."]
 
 [node name="Village" type="Node" parent="Environment"]
@@ -40,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_u5sy4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Village/Ground"]
-mesh = SubResource("BoxMesh_gee14")
+mesh = SubResource("BoxMesh_dinhu")
 
 [node name="Forest1" type="Node" parent="Environment/Village"]
 
