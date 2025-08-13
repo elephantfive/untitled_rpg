@@ -34,7 +34,9 @@ directories/dtl_directory={
 "IncandescentFoolIntro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
 "IntroBlacksmith": "res://main/dialog/timelines/village_blacksmith.dtl",
 "RattyhumpusIntro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
-"game_start": "res://main/dialog/timelines/game_start.dtl"
+"game_start": "res://main/dialog/timelines/game_start.dtl",
+"juggleballs_thief": "res://main/dialog/timelines/juggleballs_thief.dtl",
+"time_guy": "res://main/dialog/timelines/time_guy.dtl"
 }
 layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/speakerstyleagain.tres"]
 layout/default_style="res://main/dialog/speakerstyle.tres"
