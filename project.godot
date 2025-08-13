@@ -22,6 +22,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"OrphelusBung": "res://main/dialog/characters/OrphelusBung.dch",
+"Plemmen": "res://main/dialog/characters/Plemmen.dch",
 "gilliam_the_pince": "res://main/dialog/characters/gilliam_the_pince.dch",
 "hilgrum_haberdash": "res://main/dialog/characters/hilgrum_haberdash.dch",
 "incandescent_fool": "res://main/dialog/characters/incandescent_fool.dch",
@@ -33,10 +35,10 @@ directories/dtl_directory={
 "HilgrumHaberdashIntro": "res://main/dialog/timelines/hilgrum_haberdash_intro.dtl",
 "IncandescentFoolIntro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
 "IntroBlacksmith": "res://main/dialog/timelines/village_blacksmith.dtl",
+"OrphelusBungIntro": "res://main/dialog/timelines/OrphelusBungIntro.dtl",
+"PlemmenIntro": "res://main/dialog/timelines/PlemmenIntro.dtl",
 "RattyhumpusIntro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
-"game_start": "res://main/dialog/timelines/game_start.dtl",
-"juggleballs_thief": "res://main/dialog/timelines/juggleballs_thief.dtl",
-"time_guy": "res://main/dialog/timelines/time_guy.dtl"
+"game_start": "res://main/dialog/timelines/game_start.dtl"
 }
 layout/style_list=["res://main/dialog/speakerstyle.tres", "res://main/dialog/speakerstyleagain.tres"]
 layout/default_style="res://main/dialog/speakerstyle.tres"

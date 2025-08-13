@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=16 format=3 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0hch35g0wobg" path="res://assets/images/curlygirlcolored.png" id="8_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://davhsqfghv12f" path="res://assets/images/cheesestarcolored.png" id="9_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ctxbyo75rasew" path="res://assets/images/buildingplaceholder.png" id="10_kvuet"]
+[ext_resource type="Texture2D" uid="uid://ca421uaysd2tf" path="res://assets/images/npcplaceholder.png" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5sy4"]
@@ -149,7 +150,7 @@ columns = 5
 [node name="Village" type="Node" parent="Entities"]
 
 [node name="RattyhumpusIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(-0.966614, -0.146048, -0.21054, -0.149397, 0.988777, 0, 0.208177, 0.0314541, -0.977585, -0.917256, 1.27434, -5.76075)
+transform = Transform3D(-0.681305, -0.10294, 0.724725, -0.149397, 0.988777, -3.13729e-09, -0.716592, -0.108272, -0.689038, 3.99033, 1.27434, -5.76075)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/RattyhumpusIntro"]
@@ -165,7 +166,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("7_gee14")
 
 [node name="HilgrumHaberdashIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(0.651291, 0, 0.758828, 0, 1, 0, -0.758828, 0, 0.651291, -8.44251, 2.05251, -14.3757)
+transform = Transform3D(0.651291, 0, 0.758828, 0, 1, 0, -0.758828, 0, 0.651291, -17.5132, 2.05251, -5.99845)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/HilgrumHaberdashIntro"]
@@ -186,6 +187,21 @@ metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/IntroBlacksmith"]
 texture = ExtResource("10_kvuet")
+
+[node name="OrphelusBungIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
+transform = Transform3D(0.392204, 0, -0.310122, 0, 0.5, 0, 0.310122, 0, 0.392204, -18.3225, 1.41635, 17.3424)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Entities/Village/OrphelusBungIntro"]
+texture = ExtResource("11_dinhu")
+
+[node name="PlemmenIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
+transform = Transform3D(0.34517, 0, -0.361743, 0, 0.5, 0, 0.361743, 0, 0.34517, 17.0384, 0, -20.4047)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Entities/Village/PlemmenIntro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80242, 2.97838, 0)
+texture = ExtResource("11_dinhu")
 
 [node name="Player" parent="Entities" instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
