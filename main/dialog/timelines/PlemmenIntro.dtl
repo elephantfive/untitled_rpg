@@ -1,0 +1,5 @@
+plemmen: Juggleballs? Balls that you juggle with? Why, yes, I do have some juggleballs! It happens, though, that they are stolen. From who is not as important as the fact that the previous owner is dead now. It makes sense, then, that if you wish to acquire my juggleballs, you will be required to kill me. Should you succeed, I would not advise parting with your own juggleballs.
+- And how am I meant to kill you?
+	plemmen: A good old-fashioned beating ought to do it. To arms!
+- Splendid. I will stab you with my knife! | [if {items.knife} == true]
+	plemmen: Ah. You've got a weapon. That means we can play the knife game. Hop to it!

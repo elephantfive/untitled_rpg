@@ -1,21 +1,31 @@
-[gd_scene load_steps=15 format=3 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=21 format=3 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c43shasudyv6o" path="res://assets/models/tree.tscn" id="2_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://n5o5a24y33ct" path="res://assets/images/rattyhampusbumfuzzlecolored.png" id="4_0tnpc"]
+[ext_resource type="Shape3D" uid="uid://dt02qkidxd1qj" path="res://WIP art/initcollisionshape.tres" id="4_ir15t"]
 [ext_resource type="PackedScene" uid="uid://d20xppx4klv1s" path="res://main/entities/npc.tscn" id="4_iywne"]
 [ext_resource type="Script" uid="uid://sa8yqcdpwcw0" path="res://scripts/item_desc.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://c51jjjhaa2tfk" path="res://assets/images/acrobaticsguycolored.png" id="7_gee14"]
 [ext_resource type="Texture2D" uid="uid://b0hch35g0wobg" path="res://assets/images/curlygirlcolored.png" id="8_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://davhsqfghv12f" path="res://assets/images/cheesestarcolored.png" id="9_dinhu"]
 [ext_resource type="Texture2D" uid="uid://ctxbyo75rasew" path="res://assets/images/buildingplaceholder.png" id="10_kvuet"]
+[ext_resource type="Texture2D" uid="uid://ca421uaysd2tf" path="res://assets/images/npcplaceholder.png" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://bce4v2rebda6s" path="res://scripts/hud.gd" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dcv0awuesauy3" path="res://assets/images/landscapetextured-col.blend" id="13_kvuet"]
+[ext_resource type="ArrayMesh" uid="uid://543jvkewck8d" path="res://assets/images/landscapetextured-col.obj" id="14_trtic"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gee14"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dinhu"]
+data = PackedVector3Array(-5, 0.05, 5, 5, 0.05, 5, -5, -0.05, 5, 5, 0.05, 5, 5, -0.05, 5, -5, -0.05, 5, 5, 0.05, -5, -5, 0.05, -5, 5, -0.05, -5, -5, 0.05, -5, -5, -0.05, -5, 5, -0.05, -5, 5, 0.05, 5, 5, 0.05, -5, 5, -0.05, 5, 5, 0.05, -5, 5, -0.05, -5, 5, -0.05, 5, -5, 0.05, -5, -5, 0.05, 5, -5, -0.05, -5, -5, 0.05, 5, -5, -0.05, 5, -5, -0.05, -5, 5, 0.05, 5, -5, 0.05, 5, 5, 0.05, -5, -5, 0.05, 5, -5, 0.05, -5, 5, 0.05, -5, -5, -0.05, 5, 5, -0.05, 5, -5, -0.05, -5, 5, -0.05, 5, 5, -0.05, -5, -5, -0.05, -5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u5sy4"]
 size = Vector3(60, 2, 60)
 
-[sub_resource type="BoxMesh" id="BoxMesh_gee14"]
+[sub_resource type="BoxMesh" id="BoxMesh_dinhu"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kvpfn"]
@@ -28,18 +38,56 @@ unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_lnu2h")
 
+[node name="Minigames" type="Node" parent="."]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, 5.96046e-08, 1, 0, -1, 5.96046e-08, 0, -6.43008, 0)
+visible = false
+
+[node name="MinigameCamera" type="Camera3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.81189, 0)
+visible = false
+
+[node name="MinigameTable" type="StaticBody3D" parent="Minigames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Minigames/MinigameTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.13606, 0)
+mesh = SubResource("BoxMesh_gee14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Minigames/MinigameTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.13606, 0)
+shape = SubResource("ConcavePolygonShape3D_dinhu")
+
+[node name="Haruspicy" type="Node" parent="Minigames"]
+
 [node name="Environment" type="Node" parent="."]
 
 [node name="Village" type="Node" parent="Environment"]
 
+[node name="NewGround" type="StaticBody3D" parent="Environment/Village"]
+transform = Transform3D(-2.18557e-06, 0, -50, 0, 50, 0, 50, 0, -2.18557e-06, -1.81919, -17.7336, 0)
+
+[node name="landscapetextured-col" parent="Environment/Village/NewGround" instance=ExtResource("13_kvuet")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Village/NewGround"]
+visible = false
+mesh = ExtResource("14_trtic")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Village/NewGround"]
+shape = ExtResource("4_ir15t")
+
 [node name="Ground" type="StaticBody3D" parent="Environment/Village"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Village/Ground"]
 shape = SubResource("BoxShape3D_u5sy4")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Village/Ground"]
-mesh = SubResource("BoxMesh_gee14")
+mesh = SubResource("BoxMesh_dinhu")
 
 [node name="Forest1" type="Node" parent="Environment/Village"]
 
@@ -96,6 +144,7 @@ transform = Transform3D(1, 0, 0, 0, 5.96046e-08, 1, 0, -1, 5.96046e-08, 0, 12, 0
 [node name="Village" type="Node" parent="Structures"]
 
 [node name="Blacksmith" type="StaticBody3D" parent="Structures/Village"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47345, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Structures/Village/Blacksmith"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8661, 2.34737, 19.189)
@@ -149,7 +198,7 @@ columns = 5
 [node name="Village" type="Node" parent="Entities"]
 
 [node name="RattyhumpusIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(-0.966614, -0.146048, -0.21054, -0.149397, 0.988777, 0, 0.208177, 0.0314541, -0.977585, -0.917256, 1.27434, -5.76075)
+transform = Transform3D(-0.681305, -0.10294, 0.724725, -0.149397, 0.988777, -3.13729e-09, -0.716592, -0.108272, -0.689038, 3.99033, 0.459643, -10.4321)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/RattyhumpusIntro"]
@@ -157,7 +206,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("4_0tnpc")
 
 [node name="IncandescentFoolIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4185, 1.7917, 13.7194)
+transform = Transform3D(0.788955, 0, -0.61445, 0, 1, 0, 0.61445, 0, 0.788955, -3.83466, -0.0443678, 13.7194)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/IncandescentFoolIntro"]
@@ -165,7 +214,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("7_gee14")
 
 [node name="HilgrumHaberdashIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(0.651291, 0, 0.758828, 0, 1, 0, -0.758828, 0, 0.651291, -8.44251, 2.05251, -14.3757)
+transform = Transform3D(0.651291, 0, 0.758828, 0, 1, 0, -0.758828, 0, 0.651291, -17.5132, 0.377956, -5.99845)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/HilgrumHaberdashIntro"]
@@ -173,7 +222,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 texture = ExtResource("8_kvpfn")
 
 [node name="GilliamThePinceIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(0.961689, 0.274144, 0, -0.274144, 0.961689, 0, 0, 0, 1, -22.7188, 2.22724, -21.5899)
+transform = Transform3D(0.961689, 0.274144, 0, -0.274144, 0.961689, 0, 0, 0, 1, -22.7188, 2.85756, -21.5899)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/GilliamThePinceIntro"]
@@ -181,14 +230,29 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("9_dinhu")
 
 [node name="IntroBlacksmith" parent="Entities/Village" instance=ExtResource("4_iywne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7917, 1.33391, 16.6056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7917, 1.94669, 16.6056)
 metadata/_edit_group_ = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Entities/Village/IntroBlacksmith"]
 texture = ExtResource("10_kvuet")
 
+[node name="OrphelusBungIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
+transform = Transform3D(0.392204, 0, -0.310122, 0, 0.5, 0, 0.310122, 0, 0.392204, -18.3225, -2.99917, 17.3424)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Entities/Village/OrphelusBungIntro"]
+texture = ExtResource("11_dinhu")
+
+[node name="PlemmenIntro" parent="Entities/Village" instance=ExtResource("4_iywne")]
+transform = Transform3D(0.34517, 0, -0.361743, 0, 0.5, 0, 0.361743, 0, 0.34517, 17.0384, -5.93749, -20.4047)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Entities/Village/PlemmenIntro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80242, 2.97838, 0)
+texture = ExtResource("11_dinhu")
+
 [node name="Player" parent="Entities" instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553968, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17232, 4.19251, -0.98559)
 
 [connection signal="pressed" from="HUD/InventoryContainer/InventoryClose" to="HUD" method="_on_close_pressed"]

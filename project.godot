@@ -26,6 +26,8 @@ directories/dch_directory={
 "hilgrum_haberdash": "res://main/dialog/characters/hilgrum_haberdash.dch",
 "incandescent_fool": "res://main/dialog/characters/incandescent_fool.dch",
 "intro_blacksmith": "res://main/dialog/characters/village_blacksmith.dch",
+"orphelus_bung": "res://main/dialog/characters/OrphelusBung.dch",
+"plemmen": "res://main/dialog/characters/Plemmen.dch",
 "rattyhumpus": "res://main/dialog/characters/rattyhumpus.dch"
 }
 directories/dtl_directory={
@@ -33,6 +35,8 @@ directories/dtl_directory={
 "HilgrumHaberdashIntro": "res://main/dialog/timelines/hilgrum_haberdash_intro.dtl",
 "IncandescentFoolIntro": "res://main/dialog/timelines/incandescent_fool_intro.dtl",
 "IntroBlacksmith": "res://main/dialog/timelines/village_blacksmith.dtl",
+"OrphelusBungIntro": "res://main/dialog/timelines/OrphelusBungIntro.dtl",
+"PlemmenIntro": "res://main/dialog/timelines/PlemmenIntro.dtl",
 "RattyhumpusIntro": "res://main/dialog/timelines/rattyhumpus_intro.dtl",
 "game_start": "res://main/dialog/timelines/game_start.dtl"
 }
@@ -50,6 +54,8 @@ variables={
 "knife": false
 },
 "village": {
+"enucleate_active": false,
+"juggleballs_looking": false,
 "talked": {
 "FoolTalked": false,
 "GilliamTalked": false,
