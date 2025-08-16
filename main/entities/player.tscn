@@ -13,6 +13,12 @@ radius = 0.07
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.797677, 0)
+wall_min_slide_angle = 0.0
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_max_angle = 3.14159
+floor_snap_length = 0.0
 script = ExtResource("1_qpsve")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
