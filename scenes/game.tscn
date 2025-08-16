@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://l6d8ks58bquf"]
+[gd_scene load_steps=23 format=3 uid="uid://l6d8ks58bquf"]
 
 [ext_resource type="Script" uid="uid://dum586i2k751" path="res://scenes/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1gpcdxw62ke7" path="res://main/entities/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://bxsude4wc2csh" path="res://assets/images/sky_red.001.png" id="2_ca42v"]
 [ext_resource type="Texture2D" uid="uid://n5o5a24y33ct" path="res://assets/images/rattyhampusbumfuzzlecolored.png" id="4_0tnpc"]
 [ext_resource type="Shape3D" uid="uid://dt02qkidxd1qj" path="res://WIP art/initcollisionshape.tres" id="4_ir15t"]
 [ext_resource type="PackedScene" uid="uid://d20xppx4klv1s" path="res://main/entities/npc.tscn" id="4_iywne"]
@@ -21,6 +22,19 @@ size = Vector3(10, 0.1, 10)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dinhu"]
 data = PackedVector3Array(-5, 0.05, 5, 5, 0.05, 5, -5, -0.05, 5, 5, 0.05, 5, 5, -0.05, 5, -5, -0.05, 5, 5, 0.05, -5, -5, 0.05, -5, 5, -0.05, -5, -5, 0.05, -5, -5, -0.05, -5, 5, -0.05, -5, 5, 0.05, 5, 5, 0.05, -5, 5, -0.05, 5, 5, 0.05, -5, 5, -0.05, -5, 5, -0.05, 5, -5, 0.05, -5, -5, 0.05, 5, -5, -0.05, -5, -5, 0.05, 5, -5, -0.05, 5, -5, -0.05, -5, 5, 0.05, 5, -5, 0.05, 5, 5, 0.05, -5, -5, 0.05, 5, -5, 0.05, -5, 5, 0.05, -5, -5, -0.05, 5, 5, -0.05, 5, -5, -0.05, -5, 5, -0.05, 5, 5, -0.05, -5, -5, -0.05, -5)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rysoc"]
+panorama = ExtResource("2_ca42v")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_ssvqc"]
+sky_material = SubResource("PanoramaSkyMaterial_rysoc")
+
+[sub_resource type="Environment" id="Environment_ir15t"]
+background_mode = 2
+sky = SubResource("Sky_ssvqc")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_kvpfn"]
 size = Vector3(5, 5, 5)
@@ -57,6 +71,9 @@ shape = SubResource("ConcavePolygonShape3D_dinhu")
 [node name="Haruspicy" type="Node" parent="Minigames"]
 
 [node name="Environment" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_ir15t")
 
 [node name="Village" type="Node" parent="Environment"]
 
