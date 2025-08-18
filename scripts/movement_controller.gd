@@ -36,6 +36,7 @@ func _physics_process(delta):
 		
 		var target_rotation = atan2(direction.x, direction.z) - player_init_rotation
 		mesh_root.rotation.y = lerp_angle(mesh_root.rotation.y, target_rotation, rotation_speed * delta)
+		$"../CollisionShape3D".rotation.y = mesh_root.rotation.y
 
 
 func _on_player_set_movement_direction(_movement_direction):
