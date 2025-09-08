@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="untitled rpg"
+config/name="Divine Organism"
 run/main_scene="uid://l6d8ks58bquf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
